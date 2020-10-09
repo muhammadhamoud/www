@@ -1,0 +1,50 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<div class="container">
+
+ <h2>File List</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+        {{form.as_p}}
+    <button type="submit" class='btn'>Upload book</button>
+  </form>
+
+  {% if error %}
+    <p>Error in uploading the file: {{error}}</p>
+  {% endif %}
+
+    {% comment %} <p><a href="{% url 'upload' %}">Upload</a></p> {% endcomment %}
+
+    <table>
+        <thead>
+            <tr>
+                <th>hotel code</th>
+                <th>file name</th>
+                <th>upload time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for file in files %}
+            <tr>
+                <td>{{ file.hotel_code }}</td>
+                <!-- <td>{{ file.file_name }}</td> -->
+                <td>
+                    <a href="{{ file.file_name.url }}" target="_blank">{{ file.file_name }}</a>
+                </td>
+                <td>{{ file.upload_time }}</td>
+                <td>
+                    <form method="post" action="{% url 'delete_file' file.pk %}">
+                      {% csrf_token %}
+                      <button type="submit" class='btn'>Delete</button>
+                    </form>
+                  </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+</div>
+{% endblock %}

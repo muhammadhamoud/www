@@ -1,0 +1,54 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+  <div class="container">
+  <h2>Report</h2>
+
+  <table>
+    <thead>
+        <tr>
+            <th>Month</th>
+            <th>Market Code</th>
+            <th>Room Night</th>
+            <th>Room Revenue</th>
+            <th>Average Rate</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for dat in data %}
+        <tr>
+            <td>{{ dat.month }}</td>
+            <td>{{ dat.market_code }}</td>
+            <td>{{ dat.room_night }}</td>
+            <td>{{ dat.room_revenue }}</td>
+            <td>{{ dat.average_rate }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+    <!-- <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Market Code</th>
+                <th>Room Night</th>
+                <th>Room Revenue</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dat in data %}
+            <tr>
+                <td>{{ dat.date }}</td>
+                <td>{{ dat.market_code }}</td>
+                <td>{{ dat.room_night }}</td>
+                <td>{{ dat.room_revenue }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table> -->
+</div>
+{% endblock %}

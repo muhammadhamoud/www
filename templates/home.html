@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block htmltag %}{% endblock htmltag %}
+{% block head_meta_charset %}UTF-8{% endblock head_meta_charset %}
+{% block html_language_code %}en-US{% endblock html_language_code %}
+{% block head_meta_viewport %}width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no{% endblock head_meta_viewport %}
+{% block author %}Muhammad Hamoud{% endblock %}
+{% block copyright %}{% endblock copyright %}
+{% block description %}Muhammad Hamoud for developing themes{% endblock description %}
+{% block keywords %}Theme{% endblock keywords %}
+{% block blockbots %}NONE,NOARCHIVE{% endblock blockbots %}
+
+{% block head_meta %}
+
+{% endblock head_meta %}
+
+{% block webapptitle %}hamoud themes{% endblock webapptitle %}
+{% block title_color %}#3372DF{% endblock title_color %}
+{% block tile_image %}{% static 'assets/img/head/apple-touch-icon.png' %}{% endblock tile_image %}
+{% block canonical %}www.example.com{% endblock canonical%}
+{% block web_app_title %}{% endblock web_app_title %}
+{% block head_favicon %}{% static 'assets/img/head/favicon.png' %}{% endblock head_favicon %}
+{% block apple_touch_icon %}{% static 'assets/img/head/apple-touch-icon.png' %}{% endblock apple_touch_icon %}
+{% block android_desktop %}{% static 'assets/img/head/android-desktop.png' %}{% endblock android_desktop %}
+{% block apple_touch_icon_precomposed %}{% static 'assets/img/head/ios-desktop.png' %}{% endblock apple_touch_icon_precomposed %}
+
+<!-- Google Icons and Fonts -->
+{% block google_icon %}https://fonts.googleapis.com/icon?family=Material+Icons{% endblock google_icon %}
+{% block google_font %}https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;0,700;0,800;0,900;1,200;1,500;1,600;1,700;1,800;1,900&display=swap{% endblock google_font %}
+
+<!-- vendor_materlize -->
+{% block vendor_materlize %}{% static 'assets/materialize/sass/materialize.min.css' %}{% endblock vendor_materlize %}
+
+
+<!-- Template Main CSS File -->
+{# {% block main_style %}{% static 'assets/css/style.css' %}{% endblock main_style%} #}
+{% block main_style %}{% static 'assets/css/main.css' %}{% endblock main_style %}
+
+{% block link_rel_tags %}{% endblock link_rel_tags %}
+{% block extrastyle %}
+<link href="{% static 'assets/ccs/adminsample.css' %}" rel="stylesheet">
+{% endblock extrastyle%}
+{% block extrahead %}{% endblock extrahead%}
+
+{% block title %}This is home page{% endblock title %}
+
+
+{% block sectionid %}body_id{% endblock %}
+{% block body_class %}{% endblock %}
+<!-- header -->
+{% block headerid %}header{% endblock headerid %}
+{% block header_class %}page-topbar{% endblock header_class %}
+
+    {% block header %}{% endblock header %}
+    {% block toolbar %}
+        {% include 'includes/_navbar.html' %}
+    {% endblock toolbar %}
+    {% block alert %}{% endblock alert %}{# Used to display urgent news, events, and alerts #}
+    {% block actions %}{% endblock actions %}
+
+ <!-- Main Content -->
+{% block main_id %}{% endblock main_id %}
+{% block main_class %}{% endblock main_class %}
+
+
+{% block content %}
+{% block content-related %}{% endblock %}
+{% block breadcrumbs %}{% endblock %}
+{{ content }}
+{% block content-extra %}{% endblock %}
+{% endblock content %}
+
+<!-- sidebar -->
+{% block sidebar %}{% endblock sidebar%}
+
+
+<!-- Footer -->
+{% block footer_id %}{% endblock footer_id %}
+{% block footer_class %}{% endblock footer_class %}
+{% block footer %}
+{% comment %} {% include 'includes/_footer.html'%} {% endcomment %}
+{% endblock footer %}
+
+
+<!--JavaScript at end of body for optimized loading-->
+{% block head_js %}
+<script type="text/javascript" src="{% static 'assets/js/jquery-3.2.1.min.js' %}"></script>
+
+{% endblock head_js %}
+
+{% block vendor_materialize_js %}{% static 'assets/materialize/js/bin/materialize.min.js' %}{% endblock %}
+{% block vendor_init %}{% static 'assets/materialize/js/init.js' %}{% endblock %}
+
+<!-- Template Main JS File -->
+{% block main_js %}{% static 'assets/js/main.js' %}{% endblock %}
+{% block required_js %}{% static 'assets/js/register.js' %}{% endblock %}
+{% block footer_javascript %}{% endblock footer_javascript %}
+{% block body_extra %}{% endblock body_extra %}

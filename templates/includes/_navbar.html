@@ -1,0 +1,41 @@
+    {% load static %}  
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper container">
+      <a href="#!" class="brand-logo"><img src="{% static 'assets\img\logo.svg' %}" alt="logo">Logo</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{% url 'file_list' %}">Upload</a></li>
+        <li><a href="{% url 'import_files' %}">Upload All Files</a></li>
+        <li><a href="{% url 'sample_report' %}">Sample Report</a></li>
+        <li><a href="#">Mobile</a></li>
+      </ul>
+    </div>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="{% url 'file_list' %}">Upload</a></li>
+    <li><a href="{% url 'sample_report' %}">Sample Report</a></li>
+    <li><a href="#">Javascript</a></li>
+    <li><a href="#">Mobile</a></li>
+  </ul>
+</div>
+{% comment %} 
+
+    <nav>
+      <div class="nav-wrapper">
+           <ul class="left">
+              <li>
+                  <a href="#" class="brand-logo">
+                    <img src="{% static 'assets/img/logo.svg' %}" alt="materialize logo"><span class="logo-text hide-on-med-and-down">Materialize</span>
+                  </a>
+                </li>
+                <li></li>
+            </ul>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#">Sass</a></li>
+          <li><a href="#">Components</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div> {% endcomment %}
+

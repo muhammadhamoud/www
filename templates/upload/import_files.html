@@ -1,0 +1,29 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Import files</h2>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+            {{form.as_p}}
+        <button type="submit" class='btn'>Upload Files</button>
+      </form>
+    
+    <!-- {% for obj in objs %} -->
+     {% if obj %}
+      <h5>Succesfully uploaded</h5>
+      <ui>
+          <li>File Name: {{obj.file_name}}</li>
+          <li>File Path: {{obj.file_path}}</li>
+          <!-- <li>Updated: {{obj.updated}}</li>
+          <li>Created: {{obj.created}}</li> -->
+          <li>Is Active: {{obj.is_active}}</li>
+          <li><a href="{{ obj.files.url}}">{{ obj.files.url}}</a></li>
+      </ui>
+      
+      {% endif %}
+      <!-- {% endfor %} -->
+
+</div>
+{% endblock content %}

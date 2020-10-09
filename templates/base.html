@@ -1,0 +1,96 @@
+<!--
+  Main Webpage using Material Design, Bootstrap 
+  Copyright 2020 Muhammad Hamoud. All rights reserved.
+-->
+{% load i18n static %}
+{% block doctype %}<!DOCTYPE html>{% endblock %}
+{% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %} dir="rtl" {% endif %}>
+{% block htmltag %}{% endblock htmltag %}
+  <head>
+    <meta charset="{% block head_meta_charset %}utf-8{% endblock head_meta_charset %}">
+    <meta http-equiv="Content-Language" value="{% block html_language_code %}{% endblock html_language_code %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta content='{% block head_meta_viewport %}{% endblock head_meta_viewport %}' name='viewport'>
+    <meta name="description" content="{% block description %}{% endblock description %}">
+    <meta name="MSSmartTagsPreventParsing" content="true">
+    <meta name="author" content="{% block author %}{% endblock author%}">
+    <meta name="Copyright" content="{% block copyright %}{% endblock copyright %}">
+    <meta name="keywords" content="{% block keywords %}{% endblock keywords %}">
+    <meta name="robots" content="{% block blockbots %}{% endblock blockbots %}">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="{% block tile_image %}{% endblock tile_image %}">
+    <meta name="msapplication-TileColor" content="{% block title_color %}{% endblock title_color %}">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="{% block web_app_title %} {% endblock web_app_title %}">
+    {% block head_meta %}{% endblock head_meta %}
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="{% block head_favicon %}{% endblock head_favicon %}" >
+    <link rel="apple-touch-icon" href="{% block apple_touch_icon %}{% endblock apple_touch_icon %}">
+    <link rel="icon" sizes="192x192" href="{% block android_desktop %}{% endblock android_desktop %}">
+    <link rel="apple-touch-icon-precomposed" href="{% block apple_touch_icon_precomposed %}{% endblock apple_touch_icon_precomposed %}">
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page-->
+    <link rel="canonical" href="{% block canonical %}{% endblock canonical%}">
+    <link href="{% block google_icon %} {% endblock google_icon %}" rel="stylesheet">
+    <link href="{% block google_font %} {% endblock google_font %}" rel="stylesheet">
+    <link href="{% block vendor_materlize %} {% endblock vendor_materlize %}" rel="stylesheet">
+    <link href="{% block main_style %}{% endblock main_style %}" rel="stylesheet">
+    <!-- use by Django to add specific style or additional tags to the header -->
+    {% block link_rel_tags %}{% endblock link_rel_tags %}
+    {% block extrastyle %}{% endblock extrastyle%}
+    {% block extrahead %}{% endblock extrahead%}
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+
+<body id="{% block sectionid %}generic{% endblock sectionid %}" class="{% block body_class %}{% endblock %}">
+
+<header id="{% block headerid %}{% endblock headerid %}" class="{% block header_class %}{% endblock header_class %}">
+    {% block header %}{% endblock header %}
+    {% block toolbar %}{% endblock toolbar %}
+    {% block alert %}{% endblock alert %}{# Used to display urgent news, events, and alerts #}
+    {% block actions %}{% endblock actions %}
+</header>
+
+
+    {% block messages %}{% endblock %}
+    {% block primary %}{% endblock %}
+    {# Used only with one column pages: Why Django, Get Started, etc #}
+    {% block secondary %}{% endblock %} 
+    {% block tertiary %}{% endblock %}
+    {% block body_block %}{% endblock %}
+
+
+<main id = "{% block main_id %}{% endblock main_id %}" class="{% block main_class %}{% endblock main_class %}">
+    {% block content %}
+        {% block breadcrumbs %}{% endblock breadcrumbs %}
+        {% block content-related %}{% endblock content-related %}
+        {% block content-extra %}{% endblock content-extra %}
+    {% endblock content %}
+    <!-- <a href="#top" class="backtotop"><i class="material-icons">keyboard_arrow_up</i></a> -->
+</main>
+
+<article></article>
+<aside></aside>
+<address></address>
+<section></section>
+
+{% block sidebar %}{% endblock sidebar%}
+
+<footer id="{% block footer_id %}{% endblock footer_id %}" class="{% block footer_class %}{% endblock footer_class %}">
+    {% block footer %}{% endblock footer %}
+</footer>
+
+    {# Set of blocks that can be used to display JavaScript files #}
+    {% block head_js %}{% endblock head_js %}
+    <script src="{% block vendor_materialize_js %}{% endblock %}"></script>
+    <script src="{% block vendor_init %}{% endblock %}"></script>
+    <script src="{% block main_js %}{% endblock %}"></script>
+    <script src="{% block required_js %}{% endblock %}"></script>
+    {% block footer_javascript %}{% endblock footer_javascript %}
+    {% block body_extra %}{% endblock body_extra %}
+</body>
+</html>

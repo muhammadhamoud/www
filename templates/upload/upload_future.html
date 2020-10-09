@@ -1,0 +1,40 @@
+{% extends 'home.html' %}
+
+{% block content %}
+  <h2>Upload Forms</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+        <!-- {{ form.hotel_code }}
+        {{ form.file_name }} -->
+
+        {{form.as_p}}
+    <button type="submit">Upload book</button>
+  </form>
+
+  {% if error %}
+    <p>Error in uploading the file: {{error}}</p>
+  {% endif %}
+  {% endblock %}
+
+
+
+
+{% comment %} {% block content %}
+  <h2>Upload</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="document" accept="text/plain, .csv"/>
+    <button type="submit">Upload file</button>
+  </form>
+
+  {% if url %}
+    <p>Uploaded file: <a href="{{ url }}" target="_blank">{{ url }}</a></p>
+  {% endif %}
+
+  {% if error %}
+    <p>Error in uploading the file: {{error}}</p>
+  {% endif %}
+
+  {% endblock %}
+
+  <!-- , application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel --> {% endcomment %}
